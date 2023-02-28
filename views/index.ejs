@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="flex">
+        <h1>TO-DO</h1>
+    </header>
+    <div id="main-container" class="flex">
+        <div id="left-container" class="container">
+            <h2>Task List...</h2>
+            <ul id="list-container" class="flex">
+                <!-- <li class="flex list-item">
+                    <div class="text-list">Task 1</div>
+                    <div class="button-list flex">
+                        <img class="task-img" src="https://cdn.ebaumsworld.com/mediaFiles/picture/1151541/84693449.png" alt="">
+                        <input type="checkbox" >
+                        <button class="dustbin-btn"><img class="dustbin-img" src="dustbin.png"></button>
+                    </div>
+                </li>
+                <li class="flex list-item">
+                    <div class="text-list">Task 1</div>
+                    <div class="button-list flex">
+                        <img class="task-img" src="https://cdn.ebaumsworld.com/mediaFiles/picture/1151541/84693449.png" alt="">
+                        <input type="checkbox" >
+                        <button class="dustbin-btn"><img class="dustbin-img" src="dustbin.png"></button>
+                    </div> -->
+                </li>
+            </ul>
+        </div>
+        <div id="right-container" class="container">
+            <h2>Task Form...</h2>
+            <form id="form" class="flex-column" method="POST" action="/submittask" enctype="multipart/form-data">
+                <input type="text" name="task-name" id="task-name" placeholder="Enter Task Name">
+                <input type="file" name="task-img"  id="task-img" value="Task Image" accept="image/jpeg , image/png">
+                <input type="submit" placeholder="submit" id="submit-btn" value="Submit" >
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

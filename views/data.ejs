@@ -1,0 +1,14 @@
+<% data.forEach((element)=>{ %>
+    <li class="flex list-item" id="<%=element.id%>">
+        <div class="text-list"><%=element["task-name"]%></div>
+        <div class="button-list flex">
+            <img class="task-img" src="<%=element.file%>" alt="">
+            <input type="checkbox" onclick="checkbox( <%= element.id %> )" 
+            <% if(element.status){ %>
+              <%=  "checked" %>
+            <%}%>
+            >
+            <button class="dustbin-btn"><img class="dustbin-img" onclick="del(<%= element.id %>)" src="dustbin.png"></button>
+        </div>
+    </li>
+<%})%>
