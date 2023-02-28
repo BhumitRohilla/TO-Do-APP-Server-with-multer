@@ -23,7 +23,13 @@ app.post('/submittask',upload.single('task-img'),(req,res)=>{
     data.file = req.file.filename;
     data.id ='a'+crypto.randomBytes(20).toString('hex');
     data.status = false;
-    console.log(data);
+    data["task-name"] = data["task-name"].trim();
+    if(data["task-name"] == ""){
+        res.send(404);
+        res.send();
+        return ;
+    }
+    // console.log(data);
     readFile('./task.json',function(fdata){
         if(fdata.length == 0){
             fdata = []
@@ -60,7 +66,7 @@ app.get('/getList',(req,res)=>{
 
 
 app.delete('/delList',(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     readFile('./task.json',function(data){
         data = JSON.parse(data);
         let imagevalue  = null ;
@@ -71,9 +77,9 @@ app.delete('/delList',(req,res)=>{
             }
             return true;
         })
-        console.log(imagevalue);
+        // console.log(imagevalue);
         fs.unlink(`./upload/${imagevalue}`,function(err){
-            
+
         });
         writeFile('./task.json',JSON.stringify(data),function(){
             res.statusCode = 200;
@@ -110,7 +116,7 @@ function writeFile(fileName,string,callback,callback2){
 }
 
 app.put('/checkbox',(req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     let id = req.body.id;
     readFile('./task.json',function(data){
         data = JSON.parse(data);

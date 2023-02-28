@@ -84,12 +84,18 @@ header{
 
 #list-container{
     flex-direction: column;
+    gap:5px;
 }
 
 #task-name{
     box-sizing: border-box;
     width: 100%;
-    height: 30px;
+    height: 40px;
+    
+}
+
+#task-name:focus{
+    border: none;
 }
 
 #form{
